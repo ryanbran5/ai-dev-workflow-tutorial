@@ -13,13 +13,6 @@ The implementation plan will break these deliverables into smaller steps.
 
 ## To Do
 
-- [ ] **TASK-1: Project setup and data loading** — Deliver the basic app and CSV loading (PRD M1–M2, FR-5).
-  - [ ] A plain `venv/` and `requirements.txt` support running `streamlit run app.py`, which shows a dashboard title.
-  - [ ] Load `data/sales-data.csv` with appropriate date, numeric, and categorical types; show a clear message for missing or invalid data.
-  - [ ] Keep data processing in its own module with pytest coverage for loading and validation.
-  - Commit:
-  - Notes:
-
 - [ ] **TASK-2: KPI scorecards** — Show sales and transaction totals prominently (PRD M3, FR-1).
   - [ ] Total Sales equals the sum of `total_amount` and displays as currency with separators.
   - [ ] Total Orders equals the transaction count and displays with separators.
@@ -57,5 +50,12 @@ The implementation plan will break these deliverables into smaller steps.
   - Notes:
 
 ## In Progress
+
+- [ ] **TASK-1: Project setup and data loading** — Deliver the basic app and CSV loading (PRD M1–M2, FR-5).
+  - [ ] A plain `venv/` and `requirements.txt` support running `streamlit run app.py`, which shows a dashboard title.
+  - [ ] Load `data/sales-data.csv` with appropriate date, numeric, and categorical types; show a clear message for missing or invalid data.
+  - [ ] Keep data processing in its own module with pytest coverage for loading and validation.
+  - Commit:
+  - Notes:
 
 ## Done
