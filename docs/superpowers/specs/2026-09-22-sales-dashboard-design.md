@@ -127,5 +127,5 @@ complete deployment bookkeeping, and commit/push those updates to main.
 
 ## Review status
 
-The student approved the conversational design. This written specification
-is now ready for the tutorial's written-spec review before writing-plans.
+The student approved this written specification in conversation before the
+implementation plan was drafted.
