@@ -44,8 +44,8 @@ The implementation plan will break these deliverables into smaller steps.
   - [x] Feature branch was merged into `main`.
   - Notes: Dashboard was verified locally and 19 tests passed before merge.
 
-- [ ] **TASK-6: Deployment**
-  - [ ] App deployed from `main` to Streamlit Community Cloud.
-  - [ ] Public dashboard verified.
+- [x] **TASK-6: Deployment**
+  - [x] App deployed from `main` to Streamlit Community Cloud.
+  - [x] Public dashboard verified.
   - Live URL: https://ryanbran5-ai-dev-workflow-tutorial-app-ohgk2n.streamlit.app
-  - Notes: Awaiting merge to `main` and redeployment verification.
+  - Notes: Updated dashboard was redeployed from `main` and verified successfully.
