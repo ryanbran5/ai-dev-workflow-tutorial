@@ -93,3 +93,20 @@ def test_group_sales_includes_all_groups_and_sorts_ties(column):
     result = group_sales(data, column)
     assert result[column].tolist() == ['Z', 'A', 'B', 'New']
     assert result['total_amount'].tolist() == [45.0, 30.0, 30.0, -2.0]
+
+
+def test_supplied_csv_matches_independent_calculation():
+    import csv
+    from decimal import Decimal
+    path = Path(__file__).resolve().parents[1] / 'data' / 'sales-data.csv'
+    with path.open() as source:
+        rows = list(csv.DictReader(source))
+    expected = sum(Decimal(row['total_amount']) for row in rows)
+    data = load_sales(path)
+    sales, orders = sales_totals(data)
+    assert orders == len(rows) == 482
+    assert expected == Decimal('116500.21')
+    assert sales == pytest.approx(float(expected))
+    assert monthly_sales(data)['total_amount'].sum() == pytest.approx(sales)
+    for column in ['category', 'region']:
+        assert group_sales(data, column)['total_amount'].sum() == pytest.approx(sales)

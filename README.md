@@ -1,3 +1,22 @@
+# ShopSmart Sales Dashboard
+
+Live deployment: https://ryanbran5-ai-dev-workflow-tutorial-app-ohgk2n.streamlit.app
+
+## Run this dashboard
+
+Requires Python 3.11 or later.
+
+    python3 -m venv venv
+    source venv/bin/activate
+    python -m pip install -r requirements.txt
+    streamlit run app.py
+
+Run tests with `python -m pytest -q` after activating venv.
+The dashboard uses the supplied historical CSV, monthly sales totals, and
+all categories and regions. Invalid input stops the dashboard with an error.
+
+---
+
 # AI-Assisted Development Workflow Tutorial
 
 This tutorial teaches you a professional development workflow by having you build and deploy a real project: an e-commerce sales dashboard.

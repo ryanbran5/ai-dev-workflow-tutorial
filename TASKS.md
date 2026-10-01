@@ -17,13 +17,6 @@ They will be completed only after code, tests, review, and live verification.
 
 ## To Do
 
-- [ ] **TASK-5: Testing, refinement, and review** — Verify the complete dashboard and prepare it for release (PRD M6, NFR-1–NFR-4).
-  - [ ] Tests pass; local inspection confirms accurate CSV totals, all required visuals, professional layout, and no errors or warnings; record performance checks against the 5-second load and 2-second chart targets.
-  - [ ] Project `AGENTS.md` includes a Lessons section; setup and run instructions are documented.
-  - [ ] Review the feature branch against `main`, record findings and decisions, commit applicable fixes, and merge with a no-fast-forward merge commit before deployment.
-  - Commit:
-  - Notes:
-
 - [ ] **TASK-6: Deployment** — Student deploys the reviewed main branch to Streamlit Community Cloud (PRD M7, NFR-5).
   - [ ] Student deploys `app.py` from the pushed `main` branch and verifies the public dashboard.
   - [ ] Record the live URL here and near the top of `README.md`.
@@ -33,6 +26,13 @@ They will be completed only after code, tests, review, and live verification.
   - Notes:
 
 ## In Progress
+
+- [ ] **TASK-5: Testing, refinement, and review** — Verify the complete dashboard and prepare it for release (PRD M6, NFR-1–NFR-4).
+  - [ ] Tests pass; local inspection confirms accurate CSV totals, all required visuals, professional layout, and no errors or warnings; record performance checks against the 5-second load and 2-second chart targets.
+  - [ ] Project `AGENTS.md` includes a Lessons section; setup and run instructions are documented.
+  - [ ] Review the feature branch against `main`, record findings and decisions, commit applicable fixes, and merge with a no-fast-forward merge commit before deployment.
+  - Commit:
+  - Notes:
 
 ## Done
 
