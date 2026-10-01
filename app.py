@@ -14,7 +14,7 @@ except ValueError as exc:
     st.stop()
 st.caption(f"Historical sales • {data['date'].min():%b %d, %Y} – "
            f"{data['date'].max():%b %d, %Y} • Source: data/sales-data.csv")
-total_sales = data["amount_cents"].sum() / 100
+total_sales = data["total_amount"].sum() / 100
 total_orders = data["order_id"].nunique()
 
 col1, col2 = st.columns(2)
@@ -27,11 +27,11 @@ with col2:
 st.subheader("Sales Trend")
 
 daily_sales = (
-    data.groupby("date", as_index=False)["amount_cents"]
+    data.groupby("date", as_index=False)["total_amount"]
     .sum()
 )
 
-daily_sales["sales"] = daily_sales["amount_cents"] / 100
+daily_sales["sales"] = daily_sales["total_amount"] / 100
 
 st.line_chart(
     daily_sales,
@@ -41,11 +41,11 @@ st.line_chart(
 st.subheader("Sales by Category")
 
 category_sales = (
-    data.groupby("category", as_index=False)["amount_cents"]
+    data.groupby("category", as_index=False)["total_amount"]
     .sum()
 )
 
-category_sales["sales"] = category_sales["amount_cents"] / 100
+category_sales["sales"] = category_sales["total_amount"] / 100
 
 st.bar_chart(
     category_sales,
@@ -56,11 +56,11 @@ st.bar_chart(
 st.subheader("Sales by Region")
 
 region_sales = (
-    data.groupby("region", as_index=False)["amount_cents"]
+    data.groupby("region", as_index=False)["total_amount"]
     .sum()
 )
 
-region_sales["sales"] = region_sales["amount_cents"] / 100
+region_sales["sales"] = region_sales["total_amount"] / 100
 
 st.bar_chart(
     region_sales,
