@@ -38,3 +38,32 @@ st.line_chart(
     x="date",
     y="sales"
     )
+st.subheader("Sales by Category")
+
+category_sales = (
+    data.groupby("category", as_index=False)["amount_cents"]
+    .sum()
+)
+
+category_sales["sales"] = category_sales["amount_cents"] / 100
+
+st.bar_chart(
+    category_sales,
+    x="category",
+    y="sales"
+)
+
+st.subheader("Sales by Region")
+
+region_sales = (
+    data.groupby("region", as_index=False)["amount_cents"]
+    .sum()
+)
+
+region_sales["sales"] = region_sales["amount_cents"] / 100
+
+st.bar_chart(
+    region_sales,
+    x="region",
+    y="sales"
+)
