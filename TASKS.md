@@ -17,13 +17,6 @@ They will be completed only after code, tests, review, and live verification.
 
 ## To Do
 
-- [ ] **TASK-2: KPI scorecards** — Show sales and transaction totals prominently (PRD M3, FR-1).
-  - [ ] Total Sales equals the sum of `total_amount` and displays as currency with separators.
-  - [ ] Total Orders equals the transaction count and displays with separators.
-  - [ ] Pytest tests verify the calculations against known inputs.
-  - Commit:
-  - Notes:
-
 - [ ] **TASK-3: Sales trend chart** — Show sales over time (PRD M4, FR-2).
   - [ ] A chronologically ordered line chart uses daily or monthly aggregation, as agreed in the design.
   - [ ] Axes are clearly labeled and interactive tooltips show exact sales values.
@@ -54,6 +47,14 @@ They will be completed only after code, tests, review, and live verification.
   - Notes:
 
 ## In Progress
+
+- [ ] **TASK-2: KPI scorecards** — Show sales and transaction totals prominently (PRD M3, FR-1).
+  - [ ] Total Sales equals the sum of `total_amount` and displays as currency with separators.
+  - [ ] Total Orders equals the transaction count and displays with separators.
+  - [ ] Pytest tests verify the calculations against known inputs.
+  - Commit:
+  - Notes:
+
 
 ## Done
 

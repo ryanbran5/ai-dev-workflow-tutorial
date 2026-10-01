@@ -1,7 +1,7 @@
 from pathlib import Path
 import pandas as pd
 import pytest
-from sales_data import load_sales
+from sales_data import load_sales, sales_totals
 
 BASE = dict(date='2024-01-03', order_id='001', product='NA',
             category='Audio', region='North', quantity='2',
@@ -66,3 +66,11 @@ def test_extra_columns_and_negative_amounts_allowed(tmp_path):
     row = dict(BASE, total_amount='-10.50', extra='ignored')
     df = load_sales(csv_file(tmp_path, [row]))
     assert df.loc[0, 'total_amount'] == -10.5
+
+
+def test_totals_count_transactions_not_quantity_or_unique_ids():
+    data = pd.DataFrame({'total_amount': [10.25, 20.50, -5.00],
+                         'quantity': [2, 4, 1], 'order_id': ['A', 'A', 'B']})
+    sales, orders = sales_totals(data)
+    assert sales == pytest.approx(25.75)
+    assert orders == 3

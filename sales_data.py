@@ -37,3 +37,7 @@ def load_sales(path: str | Path) -> pd.DataFrame:
             raise ValueError('Invalid quantity: whole numbers are required.')
         df[column] = values
     return df
+
+
+def sales_totals(data: pd.DataFrame) -> tuple[float, int]:
+    return float(data['total_amount'].sum()), len(data)
