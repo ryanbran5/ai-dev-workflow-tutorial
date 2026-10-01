@@ -39,13 +39,13 @@ The implementation plan will break these deliverables into smaller steps.
   - [x] Sales by Region chart implemented.
   - Notes: Both breakdown charts are included in the dashboard.
 
-- [x] **TASK-5: Testing, refinement, and review**
+- [ ] **TASK-5: Testing, refinement, and review**
   - [x] App was run locally and reviewed.
-  - [x] Feature branch was merged into `main`.
-  - Notes: Dashboard was verified locally before deployment.
+  - [ ] Feature branch was merged into `main`.
+  - Notes: Dashboard was verified locally and 19 tests passed. Branch is ready to merge.
 
-- [x] **TASK-6: Deployment**
-  - [x] App deployed from `main` to Streamlit Community Cloud.
-  - [x] Public dashboard verified.
+- [ ] **TASK-6: Deployment**
+  - [ ] App deployed from `main` to Streamlit Community Cloud.
+  - [ ] Public dashboard verified.
   - Live URL: https://ryanbran5-ai-dev-workflow-tutorial-app-ohgk2n.streamlit.app
-  - Notes: Deployment completed successfully.
+  - Notes: Awaiting merge to `main` and redeployment verification.
