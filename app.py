@@ -14,3 +14,13 @@ except ValueError as exc:
     st.stop()
 st.caption(f"Historical sales • {data['date'].min():%b %d, %Y} – "
            f"{data['date'].max():%b %d, %Y} • Source: data/sales-data.csv")
+total_sales = data["amount_cents"].sum() / 100
+total_orders = data["order_id"].nunique()
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.metric("Total Sales", f"${total_sales:,.2f}")
+
+with col2:
+    st.metric("Total Orders", f"{total_orders:,}")
