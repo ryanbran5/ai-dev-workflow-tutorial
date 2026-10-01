@@ -34,14 +34,14 @@ They will be completed only after code, tests, review, and live verification.
 
 ## In Progress
 
-- [ ] **TASK-4: Category and region breakdowns** — Compare sales across all categories and regions (PRD M5, FR-3–FR-4).
-  - [ ] Category and region bar charts include every group in the CSV and sort from highest to lowest sales.
-  - [ ] Both charts have clear labels and interactive tooltips showing exact sales values.
-  - [ ] Pytest tests verify grouped totals and ordering.
-  - Commit:
-  - Notes:
-
 ## Done
+
+- [x] **TASK-4: Category and region breakdowns** — Compare sales across all categories and regions (PRD M5, FR-3–FR-4).
+  - [x] Category and region bar charts include every group in the CSV and sort from highest to lowest sales.
+  - [x] Both charts have clear labels and interactive tooltips showing exact sales values.
+  - [x] Pytest tests verify grouped totals and ordering.
+  - Commit: `cd5d48d`
+  - Notes: 23 tests pass; five categories and four regions render with highest-sales groups first.
 
 - [x] **TASK-3: Sales trend chart** — Show sales over time (PRD M4, FR-2).
   - [x] A chronologically ordered line chart uses daily or monthly aggregation, as agreed in the design.
