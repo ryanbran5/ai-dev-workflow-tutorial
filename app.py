@@ -24,3 +24,17 @@ with col1:
 
 with col2:
     st.metric("Total Orders", f"{total_orders:,}")
+st.subheader("Sales Trend")
+
+daily_sales = (
+    data.groupby("date", as_index=False)["amount_cents"]
+    .sum()
+)
+
+daily_sales["sales"] = daily_sales["amount_cents"] / 100
+
+st.line_chart(
+    daily_sales,
+    x="date",
+    y="sales"
+    )
