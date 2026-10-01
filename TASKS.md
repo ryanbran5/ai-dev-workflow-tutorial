@@ -17,13 +17,6 @@ They will be completed only after code, tests, review, and live verification.
 
 ## To Do
 
-- [ ] **TASK-4: Category and region breakdowns** — Compare sales across all categories and regions (PRD M5, FR-3–FR-4).
-  - [ ] Category and region bar charts include every group in the CSV and sort from highest to lowest sales.
-  - [ ] Both charts have clear labels and interactive tooltips showing exact sales values.
-  - [ ] Pytest tests verify grouped totals and ordering.
-  - Commit:
-  - Notes:
-
 - [ ] **TASK-5: Testing, refinement, and review** — Verify the complete dashboard and prepare it for release (PRD M6, NFR-1–NFR-4).
   - [ ] Tests pass; local inspection confirms accurate CSV totals, all required visuals, professional layout, and no errors or warnings; record performance checks against the 5-second load and 2-second chart targets.
   - [ ] Project `AGENTS.md` includes a Lessons section; setup and run instructions are documented.
@@ -40,6 +33,13 @@ They will be completed only after code, tests, review, and live verification.
   - Notes:
 
 ## In Progress
+
+- [ ] **TASK-4: Category and region breakdowns** — Compare sales across all categories and regions (PRD M5, FR-3–FR-4).
+  - [ ] Category and region bar charts include every group in the CSV and sort from highest to lowest sales.
+  - [ ] Both charts have clear labels and interactive tooltips showing exact sales values.
+  - [ ] Pytest tests verify grouped totals and ordering.
+  - Commit:
+  - Notes:
 
 ## Done
 

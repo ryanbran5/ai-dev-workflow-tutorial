@@ -3,7 +3,7 @@
 from pathlib import Path
 import streamlit as st
 import plotly.express as px
-from sales_data import load_sales, sales_totals, monthly_sales
+from sales_data import load_sales, sales_totals, monthly_sales, group_sales
 
 DATA_PATH = Path(__file__).resolve().parent / 'data' / 'sales-data.csv'
 st.set_page_config(page_title='ShopSmart Sales Dashboard', layout='wide')
@@ -28,3 +28,14 @@ trend = px.line(monthly_sales(data), x='month', y='total_amount',
 trend.update_traces(hovertemplate='%{x|%b %Y}<br>Sales: $%{y:,.2f}<extra></extra>')
 trend.update_yaxes(tickprefix='$', tickformat=',.0f')
 st.plotly_chart(trend, width='stretch')
+
+for container, column in zip(st.columns(2), ['category', 'region']):
+    grouped = group_sales(data, column)
+    chart = px.bar(grouped, x='total_amount', y=column, orientation='h',
+                   title=f'Sales by {column.title()}',
+                   labels={'total_amount': 'Sales ($)', column: column.title()},
+                   category_orders={column: grouped[column].tolist()},
+                   color_discrete_sequence=['#2563EB'])
+    chart.update_traces(hovertemplate='%{y}<br>Sales: $%{x:,.2f}<extra></extra>')
+    chart.update_xaxes(tickprefix='$', tickformat=',.0f')
+    container.plotly_chart(chart, width='stretch')

@@ -47,3 +47,9 @@ def monthly_sales(data: pd.DataFrame) -> pd.DataFrame:
     months = data['date'].dt.to_period('M').dt.to_timestamp()
     return (data.assign(month=months).groupby('month', as_index=False)['total_amount']
             .sum().sort_values('month').reset_index(drop=True))
+
+
+def group_sales(data: pd.DataFrame, column: str) -> pd.DataFrame:
+    return (data.groupby(column, as_index=False)['total_amount'].sum()
+            .sort_values(['total_amount', column], ascending=[False, True])
+            .reset_index(drop=True))

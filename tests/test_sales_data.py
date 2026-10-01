@@ -1,7 +1,7 @@
 from pathlib import Path
 import pandas as pd
 import pytest
-from sales_data import load_sales, sales_totals, monthly_sales
+from sales_data import load_sales, sales_totals, monthly_sales, group_sales
 
 BASE = dict(date='2024-01-03', order_id='001', product='NA',
             category='Audio', region='North', quantity='2',
@@ -84,3 +84,12 @@ def test_monthly_sales_preserves_year_and_sorts():
     result = monthly_sales(data)
     assert result['month'].tolist() == list(pd.to_datetime(['2024-01-01', '2024-02-01', '2025-01-01']))
     assert result['total_amount'].tolist() == [30.0, 30.0, 40.0]
+
+
+@pytest.mark.parametrize('column', ['category', 'region'])
+def test_group_sales_includes_all_groups_and_sorts_ties(column):
+    data = pd.DataFrame({column: ['Z', 'B', 'A', 'Z', 'New'],
+                         'total_amount': [20.0, 30.0, 30.0, 25.0, -2.0]})
+    result = group_sales(data, column)
+    assert result[column].tolist() == ['Z', 'A', 'B', 'New']
+    assert result['total_amount'].tolist() == [45.0, 30.0, 30.0, -2.0]
