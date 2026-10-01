@@ -2,7 +2,8 @@
 
 from pathlib import Path
 import streamlit as st
-from sales_data import load_sales, sales_totals
+import plotly.express as px
+from sales_data import load_sales, sales_totals, monthly_sales
 
 DATA_PATH = Path(__file__).resolve().parent / 'data' / 'sales-data.csv'
 st.set_page_config(page_title='ShopSmart Sales Dashboard', layout='wide')
@@ -19,3 +20,11 @@ sales, orders = sales_totals(data)
 sales_column, orders_column = st.columns(2)
 sales_column.metric('Total Sales', f'${sales:,.2f}')
 orders_column.metric('Total Orders', f'{orders:,}')
+
+trend = px.line(monthly_sales(data), x='month', y='total_amount',
+                title='Monthly Sales Trend', markers=True,
+                labels={'month': 'Month', 'total_amount': 'Sales ($)'},
+                color_discrete_sequence=['#2563EB'])
+trend.update_traces(hovertemplate='%{x|%b %Y}<br>Sales: $%{y:,.2f}<extra></extra>')
+trend.update_yaxes(tickprefix='$', tickformat=',.0f')
+st.plotly_chart(trend, width='stretch')

@@ -17,13 +17,6 @@ They will be completed only after code, tests, review, and live verification.
 
 ## To Do
 
-- [ ] **TASK-3: Sales trend chart** — Show sales over time (PRD M4, FR-2).
-  - [ ] A chronologically ordered line chart uses daily or monthly aggregation, as agreed in the design.
-  - [ ] Axes are clearly labeled and interactive tooltips show exact sales values.
-  - [ ] Pytest tests verify aggregation and chronological order.
-  - Commit:
-  - Notes:
-
 - [ ] **TASK-4: Category and region breakdowns** — Compare sales across all categories and regions (PRD M5, FR-3–FR-4).
   - [ ] Category and region bar charts include every group in the CSV and sort from highest to lowest sales.
   - [ ] Both charts have clear labels and interactive tooltips showing exact sales values.
@@ -47,6 +40,13 @@ They will be completed only after code, tests, review, and live verification.
   - Notes:
 
 ## In Progress
+
+- [ ] **TASK-3: Sales trend chart** — Show sales over time (PRD M4, FR-2).
+  - [ ] A chronologically ordered line chart uses daily or monthly aggregation, as agreed in the design.
+  - [ ] Axes are clearly labeled and interactive tooltips show exact sales values.
+  - [ ] Pytest tests verify aggregation and chronological order.
+  - Commit:
+  - Notes:
 
 ## Done
 

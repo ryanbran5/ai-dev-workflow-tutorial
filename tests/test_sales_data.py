@@ -1,7 +1,7 @@
 from pathlib import Path
 import pandas as pd
 import pytest
-from sales_data import load_sales, sales_totals
+from sales_data import load_sales, sales_totals, monthly_sales
 
 BASE = dict(date='2024-01-03', order_id='001', product='NA',
             category='Audio', region='North', quantity='2',
@@ -74,3 +74,13 @@ def test_totals_count_transactions_not_quantity_or_unique_ids():
     sales, orders = sales_totals(data)
     assert sales == pytest.approx(25.75)
     assert orders == 3
+
+
+def test_monthly_sales_preserves_year_and_sorts():
+    data = pd.DataFrame({
+        'date': pd.to_datetime(['2025-01-05', '2024-02-01', '2024-01-20', '2024-01-02']),
+        'total_amount': [40.0, 30.0, 20.0, 10.0],
+    })
+    result = monthly_sales(data)
+    assert result['month'].tolist() == list(pd.to_datetime(['2024-01-01', '2024-02-01', '2025-01-01']))
+    assert result['total_amount'].tolist() == [30.0, 30.0, 40.0]

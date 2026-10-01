@@ -41,3 +41,9 @@ def load_sales(path: str | Path) -> pd.DataFrame:
 
 def sales_totals(data: pd.DataFrame) -> tuple[float, int]:
     return float(data['total_amount'].sum()), len(data)
+
+
+def monthly_sales(data: pd.DataFrame) -> pd.DataFrame:
+    months = data['date'].dt.to_period('M').dt.to_timestamp()
+    return (data.assign(month=months).groupby('month', as_index=False)['total_amount']
+            .sum().sort_values('month').reset_index(drop=True))
